@@ -1,0 +1,9 @@
+SELECT movie.mov_title, mov_year, mov_dt_rel,
+       mov_time,dir_fname, dir_lname 
+FROM movie
+JOIN  movie_direction 
+   ON movie.mov_id = movie_direction.mov_id
+JOIN director 
+   ON movie_direction.dir_id=director.dir_id
+WHERE mov_dt_rel <'01/01/1989'
+ORDER BY mov_dt_rel desc;
